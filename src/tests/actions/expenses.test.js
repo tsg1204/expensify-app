@@ -41,8 +41,7 @@ test('should setup add expense action object with provided values', () => {
 });
 
 test('should setup add expense action object with default values', () => {
-    const action = addExpense();
-    
+    const action = addExpense();   
     expect(action).toEqual({
         type: 'ADD_EXPENSE',
         expense: {
@@ -55,4 +54,3 @@ test('should setup add expense action object with default values', () => {
         }
     })
 });
-
