@@ -14,9 +14,9 @@
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water Bill', amount: 6700 }));
-store.dispatch(addExpense({ description: 'Gas bill', amount: 2700, createdAt: 1000 }));
-store.dispatch(addExpense({ description: 'Rent Bill', amount: 12700 }));
+// store.dispatch(addExpense({ description: 'Water Bill', amount: 6700 }));
+// store.dispatch(addExpense({ description: 'Gas bill', amount: 2700, createdAt: 1000 }));
+// store.dispatch(addExpense({ description: 'Rent Bill', amount: 12700 }));
 
 // //store.dispatch(setTextFilter('bill'));
 // store.dispatch(setTextFilter('water'));
@@ -25,10 +25,11 @@ store.dispatch(addExpense({ description: 'Rent Bill', amount: 12700 }));
 //     store.dispatch(setTextFilter('bill'));
 // }, 3000)
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
-console.log(visibleExpenses);
+// console.log(visibleExpenses);
+// console.log("testing");
 
 const jsx = (
     <Provider store={store}>
