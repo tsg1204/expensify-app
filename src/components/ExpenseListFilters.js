@@ -5,8 +5,10 @@ import { DateRangePicker } from 'react-dates';
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../actions/filters';
 
 class ExpenseListFilters extends React.Component {
-  state = {
-    calendarFocused: null
+    state = {
+      calendarFocused: null,
+      startDate: null,
+      endDate: null
   };
 
   onDatesChange = ({ startDate, endDate }) => {
@@ -53,18 +55,16 @@ class ExpenseListFilters extends React.Component {
           onFocusChange={this.onFocusChange}
           showClearDates={true}
           numberOfMonths={1}
-          isOutsideRange={() => false}
+          isOutsideRange={() => false}    
         />
       </div>
     );
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    filters: state.filters
-  };
-};
+const mapStateToProps = (state) => ({
+  filters: state.filters
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setTextFilter: (text) => dispatch(setTextFilter(text)),
@@ -72,6 +72,6 @@ const mapDispatchToProps = (dispatch) => ({
   sortByAmount: () => dispatch(sortByAmount()),
   setStartDate: (startDate) => dispatch(setStartDate(startDate)),
   setEndDate: (endDate) => dispatch(setEndDate(endDate))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);
